@@ -12,7 +12,7 @@ const Selection = () => {
     <div>
       {page === "Selection" && (
         <div className="selectionContainer">
-          <div id="selectionTop">
+          <div className="topText">
             <h2>Ticket Selection</h2>
             <p>Step 1/3</p>
           </div>

@@ -9,8 +9,8 @@ const App = () => {
       
       <Header />
       <Selection />
-      <DetailsForm />
-      <Ticket />
+      {/* <DetailsForm />
+      <Ticket /> */}
     </div>
   );
 };

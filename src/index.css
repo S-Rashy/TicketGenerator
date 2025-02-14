@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Jeju+Myeongjo&display=swap");
+@import url("https://db.onlinewebfonts.com/c/1a5c2d8bbd4e28d99a6efcbb9a5b378f?family=JejuMyeongjo");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Alatsi&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Road+Rage&display=swap');
@@ -12,13 +12,30 @@ body {
       rgba(36, 160, 181, 0.2) 0%,
       rgba(36, 160, 181, 0) 100%
     );
-    /* max-width: 1440px;
-max-height: 1126px; */
-gap: 80px;
-top: 34px;
-/* padding-top: 112px;
-padding-bottom: 112px; */
-background: linear-gradient(0deg, #02191D, #02191D),
-radial-gradient(52.52% 32.71% at 50% 97.66%, rgba(36, 160, 181, 0.2) 0%, rgba(36, 160, 181, 0) 100%);
 
+}
+.topText{
+  width: 604px;
+  height: 48px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  h2 {
+    font-family: JejuMyeongjo, Roboto, sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+  }
+}
+@media screen and (max-width: 420px) {
+  .topText{
+    width: 287px;
+  height: 40px;
+  h2{
+    font-size: 24px;
+  }
+  p{
+    font-family: Roboto;
+  }
+}
 }

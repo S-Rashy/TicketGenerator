@@ -16,7 +16,7 @@ const Ticket = ({ goBack, restart }) => {
 
   return (
     <div className="ticketContainer">
-      <div id="ticketTop">
+      <div className="topText">
         <h2>Ready</h2>
         <p>Step 3/3</p>
       </div>
@@ -24,9 +24,7 @@ const Ticket = ({ goBack, restart }) => {
 
       <div className="booked">
         <h3> Your Ticket is Booked!</h3>
-        <p>
-          Check your email for a copy or you can <a href="#">download</a>
-        </p>
+        <p>You can download or check your email for a copy </p>
       </div>
       <div className="ticketbg">
         <div className="ticketDiv">

@@ -43,7 +43,7 @@ const DetailsForm = ({ goBack, goNext }) => {
 
     setInfo((prevInfo) => {
       const updatedInfo = [...prevInfo, newEntry];
-      localStorage.setItem("userDetails", JSON.stringify(updatedInfo)); 
+      localStorage.setItem("userDetails", JSON.stringify(updatedInfo));
       return updatedInfo;
     });
     setTimeout(() => {
@@ -54,17 +54,16 @@ const DetailsForm = ({ goBack, goNext }) => {
     setEmail("");
     setRequest("");
     setImageUrl("");
-    };
+  };
 
   return (
     <div className="detailsContainer">
-      <div id="detailsTop"> 
-            <h2>Attendee Details</h2>
-            <p>Step 2/3</p>
-          </div>
-          <ProgressBar step="66"/>
-          <form onSubmit={postData}>
-        
+      <div className="topText">
+        <h2>Attendee Details</h2>
+        <p>Step 2/3</p>
+      </div>
+      <ProgressBar step="66" />
+      <form onSubmit={postData}>
         <div className="photoUpDiv">
           <p id="uploadText"> Upload Profile Photo</p>
           <div className="photoDiv">
@@ -72,11 +71,12 @@ const DetailsForm = ({ goBack, goNext }) => {
               type="file"
               id="fileInput"
               onChange={handleImageUpload}
-              style={{ display: "none" }} required
+              style={{ display: "none" }}
+              required
             />
-            <label htmlFor="fileInput" id="imgInput" >
+            <label htmlFor="fileInput" id="imgInput">
               {imageUrl ? (
-                <img src={imageUrl} alt="Uploaded" width="240px"/>
+                <img src={imageUrl} alt="Uploaded" width="240px" />
               ) : (
                 <div className="newUpload">
                   <img src={uploadIcon} alt="" />
@@ -110,15 +110,16 @@ const DetailsForm = ({ goBack, goNext }) => {
           name="request"
           id="request"
           value={request}
+          maxLength={150}
           onChange={(e) => setRequest(e.target.value)}
           required
         />{" "}
         <br />
         <div className="buttons">
-          <button type="button"  onClick={goBack} className="backBtn">
+          <button type="button" onClick={goBack} className="backBtn">
             Back
           </button>
-          <button type="submit"  className="ticketBtn">
+          <button type="submit" className="ticketBtn">
             Get My Free Ticket
           </button>
         </div>

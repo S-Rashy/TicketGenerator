@@ -3,7 +3,6 @@
   height: 1083px;
   gap: 32px;
   border-radius: 24px;
-  border-width: 1px;
   padding: 48px;
   background: #041e23;
   border: 1px solid #0e464f;
@@ -13,7 +12,7 @@
 
   form {
     width: 604px;
-    height: 907px;
+    min-height: 907px;
     gap: 32px;
     border-radius: 32px;
     border-width: 1px;
@@ -24,16 +23,6 @@
   label {
     margin: 10px;
   }
-}
-#detailsTop{
-  /* border: 1px solid; */
-  width: 604px;
-  height: 48px;
-  margin:  auto;
-  display: flex;
-  justify-content: space-between;
-  h2{
-font-family: JejuMyeongjo, Roboto, sans-serif;    }
 }
 #uploadText {
   margin: 5px 0px 25px;
@@ -56,6 +45,7 @@ font-family: JejuMyeongjo, Roboto, sans-serif;    }
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
+  
 }
 #imgInput {
   width: 240px;
@@ -84,6 +74,7 @@ font-family: JejuMyeongjo, Roboto, sans-serif;    }
   align-items: center;
   justify-content: center;
   text-align: center;
+  /* border: 1px solid; */
 
   img {
     width: 32px;
@@ -112,6 +103,7 @@ font-family: JejuMyeongjo, Roboto, sans-serif;    }
   border-radius: 12px;
   color: white;
   outline: none;
+  resize: none;
 }
 
 .backBtn {
@@ -125,4 +117,28 @@ font-family: JejuMyeongjo, Roboto, sans-serif;    }
   background: rgba(36, 160, 181, 1);
   border: none;
   color: white;
+}
+@media screen and (max-width: 420px) {
+.detailsContainer{
+  width: 335px;
+  height: 1072px;
+  padding: 32px 24px;
+  form{
+    width: 287px;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+  }
+}
+.photoUpDiv{
+  width: 287px;
+  height: 341px;
+}
+.photoDiv{
+  width: 239px;
+}
+#yourname,
+#email, #request{
+  width: 287px;
+}
 }
