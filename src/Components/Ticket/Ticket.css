@@ -8,31 +8,6 @@
   color: white;
   font-family: Roboto, sans-serif;
 }
-.ticketbg {
-  background-image: url("../../assets/ticketbg.svg");
-  width: 300px;
-  height: 600px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 32px auto;
-}
-.barCode {
-  img {
-    width: 236px;
-    height: 68px;
-  }
-}
-.ticketDiv {
-  width: 260px;
-  height: 446px;
-  border: 1px solid #24a0b5;
-  padding: 14px;
-  border-radius: 16px;
-  background-color: #031e21;
-  margin: 30px;
-  color: white;
-}
 .booked {
   height: 81px;
   width: 604px;
@@ -46,6 +21,25 @@
   p {
     margin: 16px 0px 0px;
   }
+}
+.ticketbg {
+  background-image: url("../../assets/ticketbg.svg");
+  width: 300px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 32px auto;
+}
+.ticketDiv {
+  width: 260px;
+  height: 446px;
+  border: 1px solid #24a0b5;
+  padding: 14px;
+  border-radius: 16px;
+  background-color: #031e21;
+  margin: 30px;
+  color: white;
 }
 .deets {
   width: 175px;
@@ -118,6 +112,12 @@
   height: 65px;
   width: 224px;
   border-top: 1px solid #12464e;
+}
+.barCode {
+  img {
+    width: 236px;
+    height: 68px;
+  }
 }
 #bookBtn {
   width: 290px;

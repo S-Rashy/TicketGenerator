@@ -7,6 +7,21 @@ import ProgressBar from "../../Reuseables/ProgressBar/ProgressBar";
 
 const Selection = () => {
 const [page, setPage] = useState("Selection");
+const [selectedTicket, setSelectedTicket] = useState(null); 
+const [error, setError] = useState(""); 
+
+const handleSelectTicket = (ticketType) => {
+  setSelectedTicket(ticketType);
+  setError(""); 
+};
+
+const handleNext = () => {
+  if (!selectedTicket) {
+    setError(" Please select a ticket type !!!");
+    return;
+  }
+  setPage("DetailsForm");
+};
 
   return (<div>
     {page === "Selection" && (
@@ -37,10 +52,23 @@ const [page, setPage] = useState("Selection");
         <div className="type">
           <p id="select">Select Ticket Type</p>
           <div className="ticketType">
-            <TypeProp access="REGULAR ACCESS" unit="20/52" price="Free" />
-            <TypeProp access="VIP ACCESS" unit="20/52" price="$50" />
-            <TypeProp access="VVIP ACCESS" unit="20/52" price="$100" />
-          </div>
+                <div className={` ${selectedTicket === "REGULAR" ? "selected" : ""}`}
+                    onClick={() => handleSelectTicket("REGULAR")} >
+                  <TypeProp access="REGULAR ACCESS" unit="20/52" price="Free" />
+                </div>
+
+                <div className={` ${selectedTicket === "VIP" ? "selected" : ""}`}
+                    onClick={() => handleSelectTicket("VIP")} >
+                  <TypeProp access="VIP ACCESS" unit="20/52" price="$50" />
+                </div>
+
+                <div className={` ${selectedTicket === "VVIP" ? "selected" : ""}`}
+                    onClick={() => handleSelectTicket("VVIP")} >
+                  <TypeProp access="VVIP ACCESS" unit="20/52" price="$100" />
+                </div>
+              </div>
+          
+            {error && <p className="error">{error}</p>}
         </div>
 
         <div className="number">
@@ -56,7 +84,7 @@ const [page, setPage] = useState("Selection");
 
         <div className="buttons">
           <button className="cancelBtn">Cancel</button>
-          <button className="nextBtn" onClick={() => setPage("DetailsForm")}> Next </button>
+          <button className="nextBtn"  onClick={handleNext} > Next </button>
         </div>
       </div>
     </div>

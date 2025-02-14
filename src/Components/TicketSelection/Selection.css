@@ -100,6 +100,12 @@ hr {
   flex-wrap: wrap;
   cursor: pointer;
 }
+.selected{
+    background-color: #12464e;
+    border: 1px solid #197686;
+    border-radius: 15px;
+    height: fit-content;
+}
 .number {
   width: 556px;
   height: 80px;
@@ -108,6 +114,10 @@ hr {
   p {
     margin: 5px;
   }
+}
+.error{
+    margin: 5px auto;
+    color: red;
 }
 #ticketNum {
   width: 556px;

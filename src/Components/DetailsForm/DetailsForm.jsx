@@ -4,11 +4,16 @@ import uploadIcon from "../../assets/uploadIcon.svg";
 import ProgressBar from "../../Reuseables/ProgressBar/ProgressBar";
 
 const DetailsForm = ({ goBack, goNext }) => {
+
+  const cloudName = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME;
+  const uploadPreset = import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET;
+  
   const [yourname, setYourname] = useState("");
   const [email, setEmail] = useState("");
   const [request, setRequest] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [info, setInfo] = useState([]);
+  const [errors, setErrors] = useState({});
 
   useEffect(() => {
     const savedData = localStorage.getItem("userDetails");
@@ -21,12 +26,14 @@ const DetailsForm = ({ goBack, goNext }) => {
     const file = event.target.files[0];
     if (!file) return;
 
+    setErrors((prev) => ({ ...prev, imageUrl: "" }));
+
     const formData = new FormData();
     formData.append("file", file);
-    formData.append("upload_preset", "newPreset");
+    formData.append("upload_preset", uploadPreset);
 
     const response = await fetch(
-      "https://api.cloudinary.com/v1_1/dth7bsvbq/image/upload",
+      `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`,
       {
         method: "POST",
         body: formData,
@@ -39,6 +46,21 @@ const DetailsForm = ({ goBack, goNext }) => {
 
   const postData = (e) => {
     e.preventDefault();
+
+    let newErrors = {};
+    if (!imageUrl) newErrors.imageUrl = "Profile photo is required";
+    if (!yourname) newErrors.yourname = "Name is required";
+    if (!email) {
+      newErrors.email = "Email is required";
+    } else if (!email.includes("@") || !email.includes(".")) {
+      newErrors.email = "Enter a valid email address";
+    }
+        
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
+
     const newEntry = { yourname, email, request, imageUrl };
 
     setInfo((prevInfo) => {
@@ -54,6 +76,7 @@ const DetailsForm = ({ goBack, goNext }) => {
     setEmail("");
     setRequest("");
     setImageUrl("");
+    setErrors({});
   };
 
   return (
@@ -75,8 +98,10 @@ const DetailsForm = ({ goBack, goNext }) => {
               id="fileInput"
               onChange={handleImageUpload}
               style={{ display: "none" }}
-              required
+              
+              // required
             />
+            <br />
 
             <label htmlFor="fileInput" id="imgInput">
               {imageUrl ? (
@@ -88,6 +113,7 @@ const DetailsForm = ({ goBack, goNext }) => {
                 </div>
               )}
             </label>
+            {errors.imageUrl && <p className="error">{errors.imageUrl}</p>}
           </div>
         </div>
 
@@ -98,20 +124,29 @@ const DetailsForm = ({ goBack, goNext }) => {
           name="yourname"
           id="yourname"
           value={yourname}
-          onChange={(e) => setYourname(e.target.value)}
-          required
+          onChange={(e) => {
+            setYourname(e.target.value);
+            setErrors((prev) => ({ ...prev, yourname: "" })); 
+          }}          // required
         />
         <br />
+
+        {errors.yourname && <p className="error">{errors.yourname}</p>}
 
         <label htmlFor="email">Enter your email*</label> <br />
         <input
           name="email"
           id="email"
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
+          onChange={(e) => {
+            setEmail(e.target.value);  
+            setErrors((prev) => ({ ...prev, email: "" }))
+        }}
+          // required
         />
         <br />
+        {errors.email && <p className="error">{errors.email}</p>}
+
 
         <label htmlFor="request">Special request ?</label> <br />
         <textarea
@@ -120,9 +155,10 @@ const DetailsForm = ({ goBack, goNext }) => {
           value={request}
           maxLength={150}
           onChange={(e) => setRequest(e.target.value)}
-          required
+          // required
         />
         <br />
+
 
         <div className="buttons">
           <button type="button" onClick={goBack} className="backBtn">
