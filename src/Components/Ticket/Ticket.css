@@ -13,18 +13,15 @@
   width: 300px;
   height: 600px;
   display: flex;
-  /* flex-direction: column; */
-  /* border: 1px solid; */
-  justify-content: center;
-  /* align-items: center; */
+  flex-direction: column;
+  align-items: center;
   margin: 32px auto;
 }
-.barCode{
-    img{
-        width: 236px;
-        height: 68px;
-        border: 1px solid;
-    }
+.barCode {
+  img {
+    width: 236px;
+    height: 68px;
+  }
 }
 .ticketDiv {
   width: 260px;
@@ -35,23 +32,18 @@
   background-color: #031e21;
   margin: 30px;
   color: white;
-  font-family: Roboto;
-  /* background-image: url("../../assets/ticketbg.svg"); */
 }
 .booked {
   height: 81px;
   width: 604px;
-  /* border: 1px solid papayawhip; */
   text-align: center;
   margin: auto;
-
   h3 {
     font-family: Alatsi, sans-serif;
     font-size: 32px;
     margin: 0px auto;
   }
   p {
-    font-family: Roboto, sans-serif;
     margin: 16px 0px 0px;
   }
 }
@@ -60,17 +52,14 @@
   height: 76px;
   margin: 5px auto;
   text-align: center;
-  /* border: 1px solid yellow; */
   h3 {
     font-size: 34px;
-    /* letter-spacing: 0%; */
     margin: 5px 0px;
     font-family: Road Rage;
   }
   p {
     font-size: 10px;
     margin: 2px 0px;
-    font-family: Roboto;
   }
 }
 #imageUrl {
@@ -87,7 +76,6 @@
   align-items: center;
   justify-content: center;
   gap: 0px;
-  border: 1px solid;
   border-radius: 8px;
   height: 160px;
   width: 232px;
@@ -97,7 +85,6 @@
   div {
     height: 50px;
     width: 108px;
-    /* border: 1px solid fuchsia; */
     padding: 5px;
     margin: 0px;
   }
@@ -110,7 +97,6 @@
     margin: 0;
     font-size: 12px;
     max-width: 93px;
-    /* border: 1px solid indianred; */
   }
 }
 .ticketInfo div:nth-child(1) {
@@ -118,7 +104,6 @@
   border-bottom: 1px solid #12464e;
 }
 .ticketInfo div:nth-child(2) {
-  /* border-right: 1px  solid; */
   border-bottom: 1px solid #12464e;
 }
 .ticketInfo div:nth-child(3) {
@@ -141,21 +126,21 @@
   color: #24a0b5;
 }
 #downloadBtn {
-    width: 290px;
-    background: rgba(36, 160, 181, 1);
-    color: rgba(255, 255, 255, 1);
-    border: none;
+  width: 290px;
+  background: rgba(36, 160, 181, 1);
+  color: rgba(255, 255, 255, 1);
+  border: none;
 }
 @media screen and (max-width: 420px) {
-  .ticketContainer{
+  .ticketContainer {
     width: 335px;
     height: 1056px;
     padding: 32px 24px;
   }
-  .booked{
+  .booked {
     width: 287px;
     height: 94px;
-    h3{
+    h3 {
       font-size: 24px;
     }
   }

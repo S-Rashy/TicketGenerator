@@ -48,7 +48,7 @@ const DetailsForm = ({ goBack, goNext }) => {
     });
     setTimeout(() => {
       goNext();
-    }, 500);
+    }, 200);
 
     setYourname("");
     setEmail("");
@@ -62,18 +62,22 @@ const DetailsForm = ({ goBack, goNext }) => {
         <h2>Attendee Details</h2>
         <p>Step 2/3</p>
       </div>
+
       <ProgressBar step="66" />
+
       <form onSubmit={postData}>
         <div className="photoUpDiv">
           <p id="uploadText"> Upload Profile Photo</p>
           <div className="photoDiv">
             <input
               type="file"
+              accept="image/*"
               id="fileInput"
               onChange={handleImageUpload}
               style={{ display: "none" }}
               required
             />
+
             <label htmlFor="fileInput" id="imgInput">
               {imageUrl ? (
                 <img src={imageUrl} alt="Uploaded" width="240px" />
@@ -86,7 +90,9 @@ const DetailsForm = ({ goBack, goNext }) => {
             </label>
           </div>
         </div>
+
         <hr />
+
         <label htmlFor="yourname">Enter your name</label> <br />
         <input
           name="yourname"
@@ -94,8 +100,9 @@ const DetailsForm = ({ goBack, goNext }) => {
           value={yourname}
           onChange={(e) => setYourname(e.target.value)}
           required
-        />{" "}
+        />
         <br />
+
         <label htmlFor="email">Enter your email*</label> <br />
         <input
           name="email"
@@ -103,8 +110,9 @@ const DetailsForm = ({ goBack, goNext }) => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
-        />{" "}
+        />
         <br />
+
         <label htmlFor="request">Special request ?</label> <br />
         <textarea
           name="request"
@@ -113,8 +121,9 @@ const DetailsForm = ({ goBack, goNext }) => {
           maxLength={150}
           onChange={(e) => setRequest(e.target.value)}
           required
-        />{" "}
+        />
         <br />
+
         <div className="buttons">
           <button type="button" onClick={goBack} className="backBtn">
             Back

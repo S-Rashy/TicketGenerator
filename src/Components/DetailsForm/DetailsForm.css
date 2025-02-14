@@ -9,13 +9,11 @@
   color: var(--color-grey-98, rgba(250, 250, 250, 1));
   font-family: Roboto, sans-serif;
   margin: 0 auto;
-
   form {
     width: 604px;
     min-height: 907px;
     gap: 32px;
     border-radius: 32px;
-    border-width: 1px;
     padding: 24px;
     background: #08252b;
     border: 1px solid #0e464f;
@@ -30,7 +28,6 @@
 .photoUpDiv {
   width: 556px;
   height: 328px;
-  /* margin: 32px auto; */
   border-radius: 24px;
   padding: 24px 24px 48px 24px;
   background: rgba(5, 34, 40, 1);
@@ -41,11 +38,9 @@
   height: 200px;
   gap: 10px;
   background: rgba(0, 0, 0, 0.2);
-  /* border: 1px solid rgb(137, 29, 29); */
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
-  
 }
 #imgInput {
   width: 240px;
@@ -62,11 +57,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* img{
-    width: 240px;
-    height: 240px;
-    border: 1px solid;
-  } */
 }
 .newUpload {
   display: flex;
@@ -74,14 +64,11 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  /* border: 1px solid; */
-
   img {
     width: 32px;
   }
 }
-#yourname,
-#email {
+#yourname, #email {
   width: 556px;
   height: 48px;
   gap: 8px;
@@ -105,7 +92,6 @@
   outline: none;
   resize: none;
 }
-
 .backBtn {
   width: 270px;
   border: 1px solid rgba(36, 160, 181, 1);
@@ -119,26 +105,25 @@
   color: white;
 }
 @media screen and (max-width: 420px) {
-.detailsContainer{
-  width: 335px;
-  height: 1072px;
-  padding: 32px 24px;
-  form{
-    width: 287px;
-    border: none;
-    background-color: transparent;
-    padding: 0;
+  .detailsContainer {
+    width: 335px;
+    height: 1072px;
+    padding: 32px 24px;
+    form {
+      width: 287px;
+      border: none;
+      background-color: transparent;
+      padding: 0;
+    }
   }
-}
-.photoUpDiv{
-  width: 287px;
-  height: 341px;
-}
-.photoDiv{
-  width: 239px;
-}
-#yourname,
-#email, #request{
-  width: 287px;
-}
+  .photoUpDiv {
+    width: 287px;
+    height: 341px;
+  }
+  .photoDiv {
+    width: 239px;
+  }
+  #yourname, #email, #request {
+    width: 287px;
+  }
 }

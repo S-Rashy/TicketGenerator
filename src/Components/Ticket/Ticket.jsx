@@ -3,7 +3,7 @@ import "./Ticket.css";
 import BarCode from "../../assets/BarCode.svg";
 import ProgressBar from "../../Reuseables/ProgressBar/ProgressBar";
 
-const Ticket = ({ goBack, restart }) => {
+const Ticket = ({  restart }) => {
   const [savedInfo, setSavedInfo] = useState([]);
 
   useEffect(() => {
@@ -20,6 +20,7 @@ const Ticket = ({ goBack, restart }) => {
         <h2>Ready</h2>
         <p>Step 3/3</p>
       </div>
+
       <ProgressBar step="99" />
 
       <div className="booked">
@@ -33,47 +34,50 @@ const Ticket = ({ goBack, restart }) => {
             <p> 📍 04 Rumens road, Ikoyi, Lagos</p>
             <p>📅 March 15, 2025 | 7:00 PM</p>
           </div>
+
           {savedInfo ? (
-            <div>
-              {savedInfo.imageUrl ? (
-                <img src={savedInfo.imageUrl} alt="Profile" id="imageUrl" />
-              ) : (
-                <p>No image available</p>
-              )}
-              <div className="ticketInfo">
-                <div>
-                  <p>Name</p>
-                  <h4>{savedInfo.yourname}</h4>
-                </div>
-                <div>
-                  <p>Email</p>
-                  <h4>{savedInfo.email}</h4>
-                </div>
-                <div>
-                  <p>Ticket Type:</p>
-                  <h4>VIP</h4>
-                </div>
-                <div>
-                  <p>Ticket for:</p>
-                  <h4>1</h4>
-                </div>
-                <div>
-                  <p>Special request</p>
-                  <p>{savedInfo.request}</p>
-                </div>
+          <div>
+            {savedInfo.imageUrl ? ( <img src={savedInfo.imageUrl} alt="Profile" id="imageUrl" />) : ( <p>No image available</p>  )}
+            <div className="ticketInfo">
+              <div>
+                <p>Name</p>
+                <h4>{savedInfo.yourname}</h4>
               </div>
+
+              <div>
+                <p>Email</p>
+                <h4>{savedInfo.email}</h4>
+              </div>
+
+              <div>
+                <p>Ticket Type:</p>
+                <h4>VIP</h4>
+              </div>
+
+              <div>
+                <p>Ticket for:</p>
+                <h4>1</h4>
+              </div>
+
+              <div>
+                <p>Special request</p>
+                <p>{savedInfo.request}</p>
+              </div>
+              
             </div>
-          ) : (
-            <p>No recent submission found.</p>
+          </div>
+          ) : ( <p>Please enter your details</p>
           )}
         </div>
-        {/* <div className="barCode">
-          <img src={BarCode} alt="" />
-        </div> */}
+
+        <div className="barCode">
+          <img src={BarCode} alt="Bar Code" />
+        </div>
       </div>
+
       <div className="buttons">
         <button onClick={restart} id="bookBtn">
-          Book Another Ticket{" "}
+          Book Another Ticket
         </button>
         <button id="downloadBtn">Download Ticket</button>
       </div>
