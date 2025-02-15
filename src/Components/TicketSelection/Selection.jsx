@@ -83,8 +83,8 @@ const handleNext = () => {
         </div>
 
         <div className="buttons">
-          <button className="cancelBtn">Cancel</button>
-          <button className="nextBtn"  onClick={handleNext} > Next </button>
+          <button className="cancelBtn transparentBtn">Cancel</button>
+          <button className="nextBtn blueBtn"  onClick={handleNext} > Next </button>
         </div>
       </div>
     </div>

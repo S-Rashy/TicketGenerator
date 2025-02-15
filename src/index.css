@@ -22,6 +22,32 @@ body {
     font-weight: 400;
   }
 }
+.buttons {
+  width: 556px;
+  height: 48px;
+  gap: 24px;
+  background: rgba(4, 30, 35, 1);
+  display: flex;
+  justify-content: center;
+    button {
+    width: 266px;
+    height: 48px;
+    padding: 12px 24px;
+    gap: 8px;
+    border-radius: 8px;
+    font-family: JejuMyeongjo;
+    font-size: 16px;
+    line-height: 24px;
+    cursor: pointer;
+  }
+  .transparentBtn{
+    color: #24a0b5;
+    border: 1px solid;
+  }
+  .blueBtn{
+    background-color: #24a0b5;
+  }
+}
 @media screen and (max-width: 420px) {
   .topText{
     width: 287px;
@@ -31,6 +57,14 @@ body {
   }
   p{
     font-family: Roboto;
+  }
+}
+.buttons {
+  width: 287px;
+  height: 112px;
+  flex-direction: column-reverse;
+  button{
+    width: 287px;
   }
 }
 }

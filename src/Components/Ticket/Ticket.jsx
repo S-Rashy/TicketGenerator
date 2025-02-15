@@ -76,10 +76,10 @@ const Ticket = ({  restart }) => {
       </div>
 
       <div className="buttons">
-        <button onClick={restart} id="bookBtn">
+        <button onClick={restart} id="bookBtn" className="transparentBtn">
           Book Another Ticket
         </button>
-        <button id="downloadBtn">Download Ticket</button>
+        <button id="downloadBtn" className="blueBtn">Download Ticket</button>
       </div>
     </div>
   );

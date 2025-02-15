@@ -79,13 +79,14 @@
   div {
     height: 50px;
     width: 108px;
-    padding: 5px;
+    padding: 4px;
     margin: 0px;
   }
   p {
     margin: 3px 0px;
     font-size: 10px;
     color: #5a777c;
+    word-wrap: break-word;
   }
   h4 {
     margin: 0;
@@ -112,6 +113,9 @@
   height: 65px;
   width: 224px;
   border-top: 1px solid #12464e;
+  p{
+    max-width: 208px;
+  }
 }
 .barCode {
   img {
@@ -123,12 +127,9 @@
   width: 290px;
   border: 1px solid rgba(36, 160, 181, 1);
   background-color: inherit;
-  color: #24a0b5;
 }
 #downloadBtn {
   width: 290px;
-  background: rgba(36, 160, 181, 1);
-  color: rgba(255, 255, 255, 1);
   border: none;
 }
 @media screen and (max-width: 420px) {

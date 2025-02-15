@@ -106,7 +106,7 @@ const DetailsForm = ({ goBack, goNext }) => {
 
             <label htmlFor="fileInput" id="imgInput">
               {imageUrl ? (
-                <img src={imageUrl} alt="Uploaded" width="240px" />
+                <img src={imageUrl} alt="Image Uploaded" width="240px"  id="uploadedImg"/>
               ) : (
                 <div className="newUpload">
                   <img src={uploadIcon} alt="" />
@@ -136,7 +136,7 @@ const DetailsForm = ({ goBack, goNext }) => {
           // required
         />
         
-        <label htmlFor="email">Enter your email*</label> <br />
+        <label htmlFor="email">Enter your email</label> <br />
         <input
           name="email"
           id="email"
@@ -164,10 +164,10 @@ const DetailsForm = ({ goBack, goNext }) => {
         />
         <br />
         <div className="buttons">
-          <button type="button" onClick={goBack} className="backBtn">
+          <button type="button" onClick={goBack} className="backBtn transparentBtn">
             Back
           </button>
-          <button type="submit" className="ticketBtn">
+          <button type="submit" className="ticketBtn blueBtn">
             Get My Free Ticket
           </button>
         </div>

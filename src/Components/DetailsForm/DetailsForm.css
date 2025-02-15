@@ -58,6 +58,11 @@
   align-items: center;
   justify-content: center;
 }
+#uploadedImg{
+  width: 240px;
+  height: 240px;
+  border-radius: 32px;
+}
 .newUpload {
   display: flex;
   flex-direction: column;
@@ -100,7 +105,6 @@
 }
 .ticketBtn {
   width: 270px;
-  background: rgba(36, 160, 181, 1);
   border: none;
   color: white;
 }
