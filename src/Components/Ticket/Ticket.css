@@ -90,8 +90,9 @@
   }
   h4 {
     margin: 0;
-    font-size: 12px;
-    max-width: 93px;
+    font-size: 1px;
+    font-weight: 500;
+    max-width: 105px;
   }
 }
 .ticketInfo div:nth-child(1) {
