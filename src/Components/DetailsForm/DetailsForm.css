@@ -19,7 +19,7 @@
     border: 1px solid #0e464f;
   }
   label {
-    margin: 10px;
+    margin: 0px;
   }
 }
 #uploadText {
@@ -76,7 +76,7 @@
   padding: 12px;
   border: 1px solid rgba(7, 55, 63, 1);
   background-color: inherit;
-  margin: 20px auto;
+  margin: 20px auto 15px;
   color: white;
   outline: none;
 }

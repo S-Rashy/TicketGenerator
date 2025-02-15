@@ -4,10 +4,9 @@ import uploadIcon from "../../assets/uploadIcon.svg";
 import ProgressBar from "../../Reuseables/ProgressBar/ProgressBar";
 
 const DetailsForm = ({ goBack, goNext }) => {
+  // const cloudName = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME;
+  // const uploadPreset = import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET;
 
-  const cloudName = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME;
-  const uploadPreset = import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET;
-  
   const [yourname, setYourname] = useState("");
   const [email, setEmail] = useState("");
   const [request, setRequest] = useState("");
@@ -30,10 +29,12 @@ const DetailsForm = ({ goBack, goNext }) => {
 
     const formData = new FormData();
     formData.append("file", file);
-    formData.append("upload_preset", uploadPreset);
+    // formData.append("upload_preset", uploadPreset);
+    formData.append("upload_preset", "newPreset");
 
     const response = await fetch(
-      `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`,
+      // `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`,
+      "https://api.cloudinary.com/v1_1/dth7bsvbq/image/upload",
       {
         method: "POST",
         body: formData,
@@ -48,14 +49,14 @@ const DetailsForm = ({ goBack, goNext }) => {
     e.preventDefault();
 
     let newErrors = {};
-    if (!imageUrl) newErrors.imageUrl = "Profile photo is required";
+    if (!imageUrl) newErrors.imageUrl = "Please Upload your image";
     if (!yourname) newErrors.yourname = "Name is required";
     if (!email) {
       newErrors.email = "Email is required";
     } else if (!email.includes("@") || !email.includes(".")) {
       newErrors.email = "Enter a valid email address";
     }
-        
+
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
       return;
@@ -98,7 +99,7 @@ const DetailsForm = ({ goBack, goNext }) => {
               id="fileInput"
               onChange={handleImageUpload}
               style={{ display: "none" }}
-              
+
               // required
             />
             <br />
@@ -113,24 +114,24 @@ const DetailsForm = ({ goBack, goNext }) => {
                 </div>
               )}
             </label>
-            {errors.imageUrl && <p className="error">{errors.imageUrl}</p>}
           </div>
+          {errors.imageUrl && <p className="error" style={{ marginTop: "20px" }}>{errors.imageUrl}</p>}
+
         </div>
-
         <hr />
-
         <label htmlFor="yourname">Enter your name</label> <br />
         <input
           name="yourname"
           id="yourname"
           value={yourname}
+          minLength="3"
+          maxLength="40"
           onChange={(e) => {
             setYourname(e.target.value);
-            setErrors((prev) => ({ ...prev, yourname: "" })); 
-          }}          // required
+            setErrors((prev) => ({ ...prev, yourname: "" }));
+          }}
+          // required
         />
-        <br />
-
         {errors.yourname && <p className="error">{errors.yourname}</p>}
 
         <label htmlFor="email">Enter your email*</label> <br />
@@ -138,16 +139,16 @@ const DetailsForm = ({ goBack, goNext }) => {
           name="email"
           id="email"
           value={email}
+          minLength="3"
+          maxLength="40"
           onChange={(e) => {
-            setEmail(e.target.value);  
-            setErrors((prev) => ({ ...prev, email: "" }))
-        }}
+            setEmail(e.target.value);
+            setErrors((prev) => ({ ...prev, email: "" }));
+          }}
           // required
         />
-        <br />
         {errors.email && <p className="error">{errors.email}</p>}
-
-
+        
         <label htmlFor="request">Special request ?</label> <br />
         <textarea
           name="request"
@@ -158,8 +159,6 @@ const DetailsForm = ({ goBack, goNext }) => {
           // required
         />
         <br />
-
-
         <div className="buttons">
           <button type="button" onClick={goBack} className="backBtn">
             Back
