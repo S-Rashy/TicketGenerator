@@ -126,14 +126,16 @@ const DetailsForm = ({ goBack, goNext }) => {
           value={yourname}
           minLength="3"
           maxLength="40"
+          placeholder={errors.yourname ? errors.yourname : ""}
+          style={{ borderColor: errors.yourname ? "red" : "#07373f",   }}
           onChange={(e) => {
             setYourname(e.target.value);
             setErrors((prev) => ({ ...prev, yourname: "" }));
+            
           }}
           // required
         />
-        {errors.yourname && <p className="error">{errors.yourname}</p>}
-
+        
         <label htmlFor="email">Enter your email*</label> <br />
         <input
           name="email"
@@ -141,13 +143,15 @@ const DetailsForm = ({ goBack, goNext }) => {
           value={email}
           minLength="3"
           maxLength="40"
+          placeholder={errors.email ? errors.email : ""}
+          style={{ borderColor: errors.email ? "red" : "#07373f",   }}
           onChange={(e) => {
             setEmail(e.target.value);
             setErrors((prev) => ({ ...prev, email: "" }));
           }}
           // required
         />
-        {errors.email && <p className="error">{errors.email}</p>}
+        {/* {errors.email && <p className="error">{errors.email}</p>} */}
         
         <label htmlFor="request">Special request ?</label> <br />
         <textarea
