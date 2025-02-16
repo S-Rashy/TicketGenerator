@@ -47,7 +47,7 @@
   height: 240px;
   gap: 16px;
   border-radius: 32px;
-  padding: 24px;
+  /* padding: 24px; */
   background: rgba(14, 70, 79, 1);
   margin: auto;
   border: 4px solid #24a0b5;
@@ -108,7 +108,7 @@
   border: none;
   color: white;
 }
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 440px) {
   .detailsContainer {
     width: 335px;
     height: 1072px;

@@ -30,6 +30,10 @@
     text-decoration: none;
     font-size: 18px;
   }
+  a:hover{
+    text-decoration: underline;
+    font-weight: 600;
+    text-underline-offset: 4px;}
 }
 .navRight {
   width: 169px;
@@ -55,7 +59,7 @@
     display: none;
   }
 }
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 440px) {
   .header {
     width: 320px;
     height: 68px;

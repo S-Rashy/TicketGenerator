@@ -39,16 +39,24 @@ body {
     font-size: 16px;
     line-height: 24px;
     cursor: pointer;
+    transition: all 0.3s ease;
   }
   .transparentBtn{
     color: #24a0b5;
     border: 1px solid;
   }
+  .transparentBtn:hover{
+    background-color: hsl(189, 87%, 16%);
+  }
   .blueBtn{
     background-color: #24a0b5;
   }
+  .blueBtn:hover{
+    background-color: hsl(189, 67%, 23%);
+
+  }
 }
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 440px) {
   .topText{
     width: 287px;
   height: 40px;
