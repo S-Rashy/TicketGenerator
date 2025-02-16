@@ -168,7 +168,7 @@ const DetailsForm = ({ goBack, goNext }) => {
             Back
           </button>
           <button type="submit" className="ticketBtn blueBtn">
-            Get My Free Ticket
+            Get My Ticket
           </button>
         </div>
       </form>
